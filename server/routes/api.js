@@ -1,9 +1,9 @@
 const express = require('express');
 const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
-const config = require('../config/config');
-const aiService = require('../services/aiService');
-const telegramBot = require('../bot/telegram');
+const config = require('../../config/config');
+const aiService = require('../../services/aiService');
+const telegramBot = require('../../bot/telegram');
 
 const router = express.Router();
 
