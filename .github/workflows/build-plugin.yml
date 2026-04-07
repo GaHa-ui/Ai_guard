@@ -1,0 +1,30 @@
+name: Build Minecraft Plugin
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Build plugin
+        run: |
+          cd minecraft-plugin
+          ./gradlew shadowJar --no-daemon
+
+      - name: Upload JAR
+        uses: actions/upload-artifact@v4
+        with:
+          name: Aiguard.jar
+          path: minecraft-plugin/build/libs/Aiguard.jar

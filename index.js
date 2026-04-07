@@ -30,7 +30,7 @@ app.use(express.static('public'));
 telegramBot.initBot();
 
 // Запуск сервера
-app.listen(config.app.port, () => {
+app.listen(config.app.port, '0.0.0.0', () => {
   console.log(`
 ╔═══════════════════════════════════════╗
 ║   🛡️ AI Guard - Система модерации     ║
