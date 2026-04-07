@@ -1,0 +1,37 @@
+# AI Guard Configuration
+
+# URL вашего API сервера
+api_url: "http://localhost:3000/api"
+
+# API ключ (должен совпадать с .env в backend)
+api_key: "your_mc_api_key_secret"
+
+# Включить/выключить плагин
+enabled: true
+
+# Тестовый режим (не отправляет вебхуки, только логи)
+test_mode: false
+
+# Уровень чувствительности (1-100)
+sensitivity: 50
+
+# Какие события отслеживать
+events:
+  player_move: true
+  block_break: true
+  player_damage: true
+  suspicious_commands: true
+  player_join: true
+
+# Пороговые значения для детектирования
+thresholds:
+  max_speed: 20           # блоков в секунду
+  max_mining_speed: 20    # блоков в секунду
+  min_damage: 10          # минимальный урон для килл ауры
+  suspicious_commands:
+    - "fly"
+    - "speed"
+    - "god"
+    - "vanish"
+    - "noclip"
+    - "xray"

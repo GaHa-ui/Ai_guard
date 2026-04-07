@@ -1,0 +1,17 @@
+name: Aiguard
+version: 1.0.0
+author: GaHa-ui
+main: com.aiguard.Aiguard
+description: AI-powered moderation system for Minecraft servers
+api-version: 1.21
+
+commands:
+  aiguard:
+    description: AI Guard commands
+    usage: /aiguard <reload|status|check>
+    permission: aiguard.admin
+
+permissions:
+  aiguard.admin:
+    description: Admin permission for AI Guard
+    default: op

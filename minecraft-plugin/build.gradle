@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+}
+
+group = 'com.aiguard'
+version = '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.purpurmc.org/snapshots' }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.21-R0.1-SNAPSHOT'
+    compileOnly 'org.bukkit:craftbukkit:1.21-R0.1-SNAPSHOT'
+    implementation 'com.google.code.gson:gson:2.10.1'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+tasks.register('build', JavaCompile) {
+    source = sourceSets.main.java
+    classpath = configurations.compileOnly
+    destinationDirectory = file('build/libs')
+}
+
+shadowJar {
+    archiveBaseName = 'Aiguard'
+    archiveVersion = ''
+    archiveClassifier = ''
+    minimizeJar true
+}
