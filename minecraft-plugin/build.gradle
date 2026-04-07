@@ -26,5 +26,4 @@ shadowJar {
     archiveBaseName = 'Aiguard'
     archiveVersion = ''
     archiveClassifier = ''
-    minimizeJar true
 }
