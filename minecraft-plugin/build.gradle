@@ -22,12 +22,6 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-tasks.register('build', JavaCompile) {
-    source = sourceSets.main.java
-    classpath = configurations.compileOnly
-    destinationDirectory = file('build/libs')
-}
-
 shadowJar {
     archiveBaseName = 'Aiguard'
     archiveVersion = ''
